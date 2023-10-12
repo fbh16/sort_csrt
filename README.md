@@ -64,7 +64,7 @@ The evaluation of the KCF tracker was conducted on eight sequences. These eight 
 | War3                    | 96.474         | 98.237         | 95.306         | 91.666         | 2            | 0            | 0              | 94.941         |
 | All                     | 78.169         | 80.689         | 82.289         | 67.792         | 13           | 2            | 28             | 74.264         |
 
-### Evaluation of CSRT based-on SORT framework
+### Evaluation of CSRT based on SORT framework
 
 The evaluation of CSRT Tracker based-on SORT framework was conducted on 9 sequences, with a total of 6,468 detections. 6,012 of these were correctly detected, with a total of 36 changes in ID. resulting in an average tracking accuracy of 75.387%.
 
