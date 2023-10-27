@@ -1,6 +1,27 @@
 # Fusion Search Zone Tracking
 
-## detect
+## run simulation environment
+
+```bash
+cd your_work_space/src
+git clone https://github.com/npu-ius-lab/npurobocourse_sim.git
+cd.. && catkin_make
+source devel/setup.bash
+roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch
+```
+
+### start  controller
+
+for quadrotor:
+```bash
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
+for car:
+```bash
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
+
+## run detector
 
 Using YOLOv8-ros to detect target in Gazebo  simulation environment.
 
@@ -10,7 +31,7 @@ source devel/setup.bash
 roslaunch yolov8_ros v8.launch
 ```
 
-## track
+## run tracker
 
 Utilizing the Kalman filter to predict the target's position in the world frame, and project the prediction onto the image frame to generate a new search area. This new search area is then fused with the native search area of CSRT.
 
