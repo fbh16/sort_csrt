@@ -1,3 +1,30 @@
+# Fusion Search Zone Tracking
+
+## detect
+
+Using YOLOv8-ros to detect target in Gazebo  simulation environment.
+
+```bash
+cd your_workspace
+source devel/setup.bash
+roslaunch yolov8_ros v8.launch
+```
+
+## track
+
+Utilizing the Kalman filter to predict the target's position in the world frame, and project the prediction onto the image frame to generate a new search area. This new search area is then fused with the native search area of CSRT.
+
+```bash
+roslaunch projection fst.launch
+rosbag play your_ros_bag
+```
+
+## instruction of result
+
+<video src="fig/result_demo.mp4"></video>
+
+The purple point in Rviz represents the Kalman Filter's prediction in the world frame, while the green bounding box in the OpenCV window indicates the tracking results of CSRT.
+
 # CSRT based on SORT framework
 
 ## Evaluate
@@ -80,31 +107,4 @@ The evaluation of CSRT Tracker based-on SORT framework was conducted on 9 sequen
 | War2            | 95.737 | 97.212 | 73.091 | 69.767 | 3    | 0    | 1      | 70.384 |
 | War3            | 90.064 | 74.98  | 64.65  | 60.16  | 2    | 0    | 1      | 46.506 |
 | All             | 75.387 | 81.987 | 70.99  | 57.995 | 16   | 23   | 10     | 63.747 |
-
-# Fusion Search Zone Tracking
-
-## detect
-
-Using YOLOv8-ros to detect target in Gazebo  simulation environment.
-
-```bash
-cd your_workspace
-source devel/setup.bash
-roslaunch yolov8_ros v8.launch
-```
-
-## track
-
-Utilizing the Kalman filter to predict the target's position in the world frame, and project the prediction onto the image frame to generate a new search area. This new search area is then fused with the native search area of CSRT.
-
-```bash
-roslaunch projection fst.launch
-rosbag play your_ros_bag
-```
-
-## instruction of result
-
-<video src="/home/fbh/%E5%9B%BE%E7%89%87/result_demo.mp4"></video>
-
-The purple point in Rviz represents the Kalman Filter's prediction in the world frame, while the green bounding box in the OpenCV window indicates the tracking results of CSRT.
 
