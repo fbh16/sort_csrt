@@ -21,7 +21,7 @@ rosbag play your_ros_bag
 
 ## instruction of result
 
-<video src="./fig/demo.mp4"></video>
+https://github.com/fbh16/sort_csrt/assets/87756936/19b6681d-c3a9-4b97-a555-bff8d5262bf2
 
 The purple point in Rviz represents the Kalman Filter's prediction in the world frame, while the green bounding box in the OpenCV window indicates the tracking results of CSRT.
 
