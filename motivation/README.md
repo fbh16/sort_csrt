@@ -24,3 +24,13 @@ python3 generate_checkerboard.py 7 9 0.108
 roslaunch [rospkg] outdoor_flight_gazebo.launch
 ```
 
+![calibration](./fig/calibration.png)
+
+标定
+
+```
+rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108
+```
+
+
+
