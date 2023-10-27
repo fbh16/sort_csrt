@@ -4,7 +4,11 @@
 
         <param name = "max_age"             value = "15"/>
         <param name = "min_hits"            value = "2"/>
+<<<<<<< HEAD
         <param name = "view_img"            value = "true"/>
+=======
+        <param name = "view_img"            value = "false"/>
+>>>>>>> d4c836ab845d2b4773b917bff426f12242d77461
         <param name = "img_sub"             value = "/yolo/img"/>
         <param name = "bbx_sub"             value = "/yolo/bbx"/>
 

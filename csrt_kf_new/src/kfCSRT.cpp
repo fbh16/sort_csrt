@@ -90,7 +90,11 @@ void SubPub::callback (const sensor_msgs::ImageConstPtr &img, const darknet_ros_
     {
         int txtThick = 1;
         int boxThick = 2;
+<<<<<<< HEAD
         float txtScale = 0.5f;
+=======
+        float txtScale = 0.5;
+>>>>>>> d4c836ab845d2b4773b917bff426f12242d77461
         Scalar boxRGB(0, 255, 0);
         Scalar txtRGB(255,255,0);
         if (!allTracks.empty())
