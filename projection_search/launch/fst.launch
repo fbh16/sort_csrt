@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="projection_search" name="FusionSearchZoneTracking" type="search" output="screen">
+        <param name="view_image"                value="true"/>
+        <param name="input_topic1"              value="/yolo/bbx"/>
+        <param name="input_topic2"              value="/yolo/img"/>
+        <param name="output_topic"              value="/result"/>
+    </node>
+
+    <node pkg="rviz" name="rviz" type="rviz" args="-d $(find projection_search)/proj.rviz" required="false"/>
+</launch>

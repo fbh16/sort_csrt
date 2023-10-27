@@ -1,0 +1,12 @@
+<launch>
+
+    <node pkg = "mot"   type = "csrt"    name = "MOT"    output = "screen">
+
+        <param name = "max_age"             value = "5"/>
+        <param name = "min_hits"            value = "2"/>
+        <param name = "view_img"            value = "true"/>
+        <param name = "img_sub"             value = "/yolo/img"/>
+        <param name = "bbx_sub"             value = "/yolo/bbx"/>
+
+    </node>
+</launch>
