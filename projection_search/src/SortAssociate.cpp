@@ -27,13 +27,20 @@ void SortAssociate::AssocDets2Trks(const vector<Rect2d> dets, const vector<Rect2
     newDets.clear();
     int trkNum = trks.size();
     int detNum = dets.size();
+    ////////////////////////////
+    ////////////////////////////
+    // std::cout << "detNum: " << detNum << std::endl;
+    // std::cout << "trkNum: " << trkNum << std::endl;
+    ////////////////////////////
+    ////////////////////////////
     if (trkNum == 0)
     {
         for (int i = 0; i < dets.size(); i++)
         {
             newDets.insert(i);
         }
-    } else {
+    } 
+    else {
         iouMatrix.resize(trkNum, vector<double>(detNum, 0));
         for (int t = 0; t < trkNum; t++)
         {
@@ -47,25 +54,55 @@ void SortAssociate::AssocDets2Trks(const vector<Rect2d> dets, const vector<Rect2
         {
             HungAlgo.Solve(iouMatrix, assignment, false); // assignment[i]表示与第i个track相匹配的检测索引
         }
+        ////////////////////////////
+        ////////////////////////////
+        // std::cout << "assignment:" << std::endl;
+        // for (int i=0; i<assignment.size(); i++)
+        // {
+        //     std::cout << assignment[i] << " ";
+        // }
+        // std::cout << std::endl;
+        ////////////////////////////
+        ////////////////////////////
+
         /** fill up pairs and newDets */
         if (assignment.size() > 0) {
             for (int i = 0; i < trkNum; i++)
             {
                 if (assignment[i] != -1)
                 {
-                    if (1 - iouMatrix[i][assignment[i]] < iouThresh) 
+                    if (1 - iouMatrix[i][assignment[i]] > iouThresh) 
                     {
-                        newDets.insert(assignment[i]);
-                        pairs.push_back({i, -1});
-                    } else {
                         matchedDets.insert(assignment[i]);
                         pairs.push_back({i, assignment[i]});
+                    } 
+                    else {
+                        newDets.insert(assignment[i]);
+                        pairs.push_back({i, -1});
                     }
                 } else {
                     pairs.push_back({i, -1});
                 }
             }
         }
+        ////////////////////////////
+        ////////////////////////////
+        // std::cout << "newDets1: " << std::endl;
+        // for (auto det : newDets)
+        // {
+        //     std::cout << det << " ";
+        // }
+        // std::cout << std::endl; 
+
+        // std::cout << "pairs1: " << std::endl;
+        // for (auto pair : pairs)
+        // {
+        //     std::cout << pair.first << " " << pair.second << std::endl;
+        // }
+        // std::cout << std::endl;
+        ////////////////////////////
+        ////////////////////////////
+
         for (int d = 0; d < dets.size(); d++)
         {
             allDets.insert(d);
@@ -75,6 +112,23 @@ void SortAssociate::AssocDets2Trks(const vector<Rect2d> dets, const vector<Rect2
             matchedDets.begin(), matchedDets.end(), 
             insert_iterator<set<int>>(newDets, newDets.begin())
         );
+        ////////////////////////////
+        ////////////////////////////
+        // std::cout << "newDets2: " << std::endl;
+        // for (auto det : newDets)
+        // {
+        //     std::cout << det << " ";
+        // }
+        // std::cout << std::endl; 
+
+        // std::cout << "pairs2: " << std::endl;
+        // for (auto pair : pairs)
+        // {
+        //     std::cout << pair.first << " " << pair.second << std::endl;
+        // }
+        // std::cout << std::endl;
+        ////////////////////////////
+        ////////////////////////////
     }
 }
 

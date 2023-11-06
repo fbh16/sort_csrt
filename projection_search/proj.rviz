@@ -6,9 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Odometry1/Shape1
-        - /Odometry2
-        - /Odometry2/Shape1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 728
@@ -56,74 +53,6 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Angle Tolerance: 0.10000000149011612
-      Class: rviz/Odometry
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.30000001192092896
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: false
-      Enabled: true
-      Keep: 1
-      Name: Odometry
-      Position Tolerance: 0.10000000149011612
-      Shape:
-        Alpha: 1
-        Axes Length: 0.5
-        Axes Radius: 0.05000000074505806
-        Color: 255; 25; 0
-        Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
-        Shaft Length: 1
-        Shaft Radius: 0.05000000074505806
-        Value: Axes
-      Topic: /ground_truth/state
-      Unreliable: false
-      Value: true
-    - Angle Tolerance: 0.10000000149011612
-      Class: rviz/Odometry
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.30000001192092896
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: false
-      Enabled: true
-      Keep: 1
-      Name: Odometry
-      Position Tolerance: 0.10000000149011612
-      Shape:
-        Alpha: 1
-        Axes Length: 0.5
-        Axes Radius: 0.05000000074505806
-        Color: 255; 25; 0
-        Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
-        Shaft Length: 1
-        Shaft Radius: 0.05000000074505806
-        Value: Axes
-      Topic: /tianbot_mini/odom
-      Unreliable: false
-      Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 1
@@ -136,32 +65,52 @@ Visualization Manager:
         base_stabilized:
           Value: false
         front_cam_link:
-          Value: true
-        front_cam_optical_frame:
           Value: false
+        front_cam_optical_frame:
+          Value: true
         laser0_frame:
           Value: false
         sonar_link:
           Value: false
         tianbot_mini/apriltag:
           Value: false
-        tianbot_mini/base_link:
-          Value: false
-        tianbot_mini/caster_wheel_link:
-          Value: false
-        tianbot_mini/casterball_link:
-          Value: false
-        tianbot_mini/chassis:
-          Value: false
-        tianbot_mini/chassis_inertia:
-          Value: false
-        tianbot_mini/laser:
-          Value: false
-        tianbot_mini/left_wheel_link:
-          Value: false
         tianbot_mini/odom:
           Value: false
-        tianbot_mini/right_wheel_link:
+        tianbot_mini_01/base_link:
+          Value: false
+        tianbot_mini_01/caster_wheel_link:
+          Value: false
+        tianbot_mini_01/casterball_link:
+          Value: false
+        tianbot_mini_01/chassis:
+          Value: false
+        tianbot_mini_01/chassis_inertia:
+          Value: false
+        tianbot_mini_01/laser:
+          Value: false
+        tianbot_mini_01/left_wheel_link:
+          Value: false
+        tianbot_mini_01/odom:
+          Value: false
+        tianbot_mini_01/right_wheel_link:
+          Value: false
+        tianbot_mini_02/base_link:
+          Value: false
+        tianbot_mini_02/caster_wheel_link:
+          Value: false
+        tianbot_mini_02/casterball_link:
+          Value: false
+        tianbot_mini_02/chassis:
+          Value: false
+        tianbot_mini_02/chassis_inertia:
+          Value: false
+        tianbot_mini_02/laser:
+          Value: false
+        tianbot_mini_02/left_wheel_link:
+          Value: false
+        tianbot_mini_02/odom:
+          Value: false
+        tianbot_mini_02/right_wheel_link:
           Value: false
         world:
           Value: false
@@ -172,20 +121,6 @@ Visualization Manager:
       Show Names: true
       Tree:
         tianbot_mini/odom:
-          tianbot_mini/base_link:
-            tianbot_mini/chassis:
-              tianbot_mini/caster_wheel_link:
-                tianbot_mini/casterball_link:
-                  {}
-              tianbot_mini/chassis_inertia:
-                {}
-              tianbot_mini/left_wheel_link:
-                {}
-              tianbot_mini/right_wheel_link:
-                {}
-            tianbot_mini/laser:
-              tianbot_mini/apriltag:
-                {}
           world:
             base_footprint:
               base_stabilized:
@@ -200,13 +135,87 @@ Visualization Manager:
       Update Interval: 0.0010000000474974513
       Value: true
     - Alpha: 1
-      Class: rviz/PointStamped
-      Color: 204; 41; 204
+      Arrow Length: 0.30000001192092896
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 255; 25; 0
       Enabled: true
-      History Length: 1
-      Name: PointStamped
-      Radius: 0.20000000298023224
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: PoseArray
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
       Topic: /result
+      Unreliable: false
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Axes
+      Topic: /tianbot_mini_01/odom
+      Unreliable: false
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Axes
+      Topic: /tianbot_mini_02/odom
       Unreliable: false
       Value: true
   Enabled: true

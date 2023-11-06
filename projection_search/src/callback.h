@@ -3,9 +3,10 @@
 #include <message_filters/sync_policies/approximate_time.h>
 #include <message_filters/sync_policies/exact_time.h>
 #include <message_filters/time_synchronizer.h>
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
+#include <visualization_msgs/MarkerArray.h>
+#include <visualization_msgs/Marker.h>
 
 #include "Hungarian.h"
 #include "KalmanTracker3D.h"
@@ -50,6 +51,8 @@ public:
     {
         Ptr<TrackerCSRT> trk;
         cv::Rect2d roi;
+        int hitStreak;
+        int age;
     };
     struct Track
     {
@@ -74,4 +77,6 @@ private:
     set<int> newDets;
     vector<pair<int, int>> pairs;
     map<int, Track> trackBuffer;
+    int minHits = 2;
+    int maxAge = 6;
 };
