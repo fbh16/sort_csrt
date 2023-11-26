@@ -70,7 +70,7 @@ void KalmanTracker3D::update(StateType stateMat)
 	time_since_update = 0;
 	history.clear();
 	// hits += 1;
-	// hit_streak += 1;
+	hit_streak += 1;
     
 	// measurement
 	// measurement.at<float>(0, 0) = stateMat.x + stateMat.width / 2;

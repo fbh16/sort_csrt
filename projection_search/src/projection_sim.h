@@ -24,6 +24,7 @@ class Projection
 public:
     Projection()
     {
+        /** intrinsic matrix */
         K_intr << 319.9988245765257,  0.000000000000000,  320.500,
                   0.000000000000000,  319.9988245765257,  240.500,
                   0.000000000000000,  0.000000000000000,  1.00000;
@@ -34,19 +35,12 @@ public:
         Eigen::Matrix4d Rt_wc;
         cv::Point3d point;
     };
-    
-    cv::Point2d pixel2normalized(const cv::Point2d detect, const Eigen::Matrix3d K_intr);
 
-    cv::Point2d normalized2pixel(const cv::Point3d Cam, const Eigen::Matrix3d K);
+    cv::Point3d pixel2world(const cv::Rect2d detect, ros::Time timeStamp);
 
-    Result pixel2world(const cv::Rect2d detect, ros::Time timeStamp);
-
-    cv::Rect2d world2pixel(const Eigen::Matrix4d Rt, const cv::Point3d point, const double width, const double height);
+    cv::Point2d world2pixel(const cv::Point3d point, ros::Time timeStamp);
 
     void transformCoordinate(darknet_ros_msgs::BoundingBox &bbx, const int std_w, const int std_h, const int ori_w, const int ori_h);
-
-
-    cv::Vec2d Pixel2Cam(const cv::Vec2d& p, const cv::Mat& K);
     
 private:
 	tf::TransformListener listener;

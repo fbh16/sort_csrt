@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="projection_search" name="FusionSearchZoneTracking" type="v3" output="screen">
+    <node pkg="multi_csrt_kf" name="csrTracking" type="multi_csrt_kf" output="screen">
         <param name="view_image"                value="true"/>
         <!-- track param -->
         <param name="min_hits"                  value="3"/>

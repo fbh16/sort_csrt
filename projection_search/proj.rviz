@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
         - /TF1/Frames1
-      Splitter Ratio: 0.5
+      Splitter Ratio: 0.7441176176071167
     Tree Height: 728
   - Class: rviz/Selection
     Name: Selection
@@ -61,7 +62,7 @@ Visualization Manager:
         base_footprint:
           Value: false
         base_link:
-          Value: false
+          Value: true
         base_stabilized:
           Value: false
         front_cam_link:
@@ -74,46 +75,26 @@ Visualization Manager:
           Value: false
         tianbot_mini/apriltag:
           Value: false
+        tianbot_mini/base_link:
+          Value: true
+        tianbot_mini/caster_wheel_link:
+          Value: false
+        tianbot_mini/casterball_link:
+          Value: false
+        tianbot_mini/chassis:
+          Value: false
+        tianbot_mini/chassis_inertia:
+          Value: false
+        tianbot_mini/laser:
+          Value: false
+        tianbot_mini/left_wheel_link:
+          Value: false
         tianbot_mini/odom:
           Value: false
-        tianbot_mini_01/base_link:
-          Value: false
-        tianbot_mini_01/caster_wheel_link:
-          Value: false
-        tianbot_mini_01/casterball_link:
-          Value: false
-        tianbot_mini_01/chassis:
-          Value: false
-        tianbot_mini_01/chassis_inertia:
-          Value: false
-        tianbot_mini_01/laser:
-          Value: false
-        tianbot_mini_01/left_wheel_link:
-          Value: false
-        tianbot_mini_01/odom:
-          Value: false
-        tianbot_mini_01/right_wheel_link:
-          Value: false
-        tianbot_mini_02/base_link:
-          Value: false
-        tianbot_mini_02/caster_wheel_link:
-          Value: false
-        tianbot_mini_02/casterball_link:
-          Value: false
-        tianbot_mini_02/chassis:
-          Value: false
-        tianbot_mini_02/chassis_inertia:
-          Value: false
-        tianbot_mini_02/laser:
-          Value: false
-        tianbot_mini_02/left_wheel_link:
-          Value: false
-        tianbot_mini_02/odom:
-          Value: false
-        tianbot_mini_02/right_wheel_link:
+        tianbot_mini/right_wheel_link:
           Value: false
         world:
-          Value: false
+          Value: true
       Marker Scale: 2
       Name: TF
       Show Arrows: false
@@ -121,6 +102,20 @@ Visualization Manager:
       Show Names: true
       Tree:
         tianbot_mini/odom:
+          tianbot_mini/base_link:
+            tianbot_mini/chassis:
+              tianbot_mini/caster_wheel_link:
+                tianbot_mini/casterball_link:
+                  {}
+              tianbot_mini/chassis_inertia:
+                {}
+              tianbot_mini/left_wheel_link:
+                {}
+              tianbot_mini/right_wheel_link:
+                {}
+            tianbot_mini/laser:
+              tianbot_mini/apriltag:
+                {}
           world:
             base_footprint:
               base_stabilized:
@@ -253,18 +248,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -1.421082854270935
+        Y: 0.15209686756134033
+        Z: -0.46116968989372253
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8053981065750122
+      Pitch: 0.6153982877731323
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.8066803216934204
+      Yaw: 0.886681079864502
     Saved: ~
 Window Geometry:
   Displays:
